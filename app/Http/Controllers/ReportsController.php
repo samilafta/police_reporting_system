@@ -302,9 +302,6 @@ class ReportsController extends Controller
 
     }
 
-
-
-
     public function custom(Request $request) {
 
         $from_date = $request->from_date;

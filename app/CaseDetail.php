@@ -36,7 +36,9 @@ class CaseDetail extends Model
     public function c_address() {
         return $this->hasOne(ComplainantAddress::class);
     }
-
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
     public function incident() {
         return $this->hasOne(IncidentDetails::class);
     }
@@ -55,10 +57,6 @@ class CaseDetail extends Model
 
     public function culprit() {
         return $this->hasOne(CulpritInfo::class);
-    }
-
-    public function user() {
-        return $this->belongsTo(User::class);
     }
 
     public function assigned_user() {
