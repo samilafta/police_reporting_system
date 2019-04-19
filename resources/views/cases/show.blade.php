@@ -65,9 +65,19 @@
 
                                 <div class="col-md-4">
                                     @hasanyrole('super-admin|commander-officer')
-                                    <a href="{{ route('cases.approve', ['id' => $case->id]) }}" class="btn btn-info">Approve</a>
-                                    <button class="btn btn-info" data-toggle="modal" data-target="#assign_case">
-                                        Assign Investigator</button>
+
+                                    @if($case->case_status == 1)
+
+                                        <a href="{{ route('cases.approve', ['id' => $case->id]) }}" class="btn btn-info">Approve</a>
+
+                                    @endif
+                                    @if($case->case_status == 0)
+
+                                        <button class="btn btn-info" data-toggle="modal" data-target="#assign_case">
+                                            Assign Investigator</button>
+
+                                    @endif
+
                                     @endhasanyrole
                                 </div>
 
@@ -84,10 +94,13 @@
 
                                         @if(Auth::user()->id == $case->investigator_id)
 
-                                            <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#investigation_details"
-                                                    data-backdrop="static" data-keyboard="false">
-                                                Add Investigation Details</button>
+                                            @if($case->case_status == 2)
 
+                                                <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#investigation_details"
+                                                        data-backdrop="static" data-keyboard="false">
+                                                    Add Investigation Details</button>
+
+                                            @endif
                                         @endif
 
                                     @endif
@@ -262,7 +275,12 @@
                                     <b>Case Number: </b> {{ $case->case_number }} <br/>
                                     <b>Date Opened: </b> {{ $case->created_at }} <br/>
                                     <b>Opened By: </b> {{ $case->user->profile->full_name }} <br/>
-                                    <b>Assigned Investigator: </b> {{ $case->assigned_user->profile->full_name }} <br/>
+
+                                    @if($case->case_status == 1)
+
+                                        <b>Assigned Investigator: </b> {{ $case->assigned_user->profile->full_name }} <br/>
+
+                                    @endif
                                     {{--<b>Opened By: </b> {{ $case->filed_by->full_name }} <br/>--}}
 
                                 </div>

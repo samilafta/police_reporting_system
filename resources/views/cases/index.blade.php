@@ -107,9 +107,11 @@
                                         <a href="{{ route('cases.show', ['case' => $case->id]) }}">
                                         <i class="livicon" data-name="info" data-size="24" data-loop="true" data-c="#428BCA" data-hc="#428BCA" title="view case"></i>
                                         </a>
+                                        @if($case->case_status != 2)
                                         <a href="{{ route('cases.edit', ['case' => $case->id]) }}">
                                             <i class="livicon" data-name="edit" data-size="24" data-c="#428BCA" data-hc="#428BCA" data-loop="true" title="edit case"></i>
                                         </a>
+                                        @endif
                                         <a href="#" data-toggle="modal" data-target="#delete_confirm{{ $case->id }}">
                                             <i class="livicon" data-name="trash" data-size="24" data-loop="true" data-c="#f56954" data-hc="#f56954" title="delete case"></i>
                                         </a>
