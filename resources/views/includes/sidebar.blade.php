@@ -22,11 +22,13 @@
                                 <i class="fa fa-angle-double-right"></i> Cases List
                             </a>
                         </li>
-                        {{--<li>--}}
-                            {{--<a href="{{route('users.profile')}}">--}}
-                                {{--<i class="fa fa-angle-double-right"></i> My Profile--}}
-                            {{--</a>--}}
-                        {{--</li>--}}
+                        @hasrole('investigator-officer')
+                        <li>
+                            <a href="{{route('case.mycase')}}">
+                                <i class="fa fa-angle-double-right"></i> Assigned Cases
+                            </a>
+                        </li>
+                        @endhasrole
 
                     </ul>
                 </li>

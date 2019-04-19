@@ -33,6 +33,11 @@ Route::group(['middleware' => ['auth']], function() {
 
     Route::resource('cases', 'CaseDetailsController');
 
+    Route::get('/mycases', [
+        'uses' => 'CaseDetailsController@mycase',
+        'as' => 'case.mycase'
+    ]);
+
     Route::get('/profile', [
         'uses' => 'UsersController@profile',
         'as' => 'users.profile'

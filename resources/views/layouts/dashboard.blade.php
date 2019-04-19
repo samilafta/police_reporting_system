@@ -67,7 +67,7 @@
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-left">
-                                <a href="lockscreen.html"> <i class="livicon" data-name="lock" data-s="18"></i> Lock </a>
+                                <a href="#"> <i class="livicon" data-name="lock" data-s="18"></i> Lock </a>
                             </div>
                             <div class="pull-right">
                                 <a href="{{ route('logout') }}"

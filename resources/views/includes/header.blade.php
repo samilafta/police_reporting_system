@@ -52,19 +52,19 @@
                         </li>
                         <!-- Menu Body -->
                         <li>
-                            <a href="view_user.html"> <i class="livicon" data-name="user" data-s="18"></i> My Profile </a>
+                            <a href="#"> <i class="livicon" data-name="user" data-s="18"></i> My Profile </a>
                         </li>
                         <li role="presentation"></li>
                         <li>
-                            <a href="user_profile.html"><i class="livicon" data-name="gears" data-s="18"></i> Account Settings </a>
+                            <a href="#"><i class="livicon" data-name="gears" data-s="18"></i> Account Settings </a>
                         </li>
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-left">
-                                <a href="lockscreen.html"> <i class="livicon" data-name="lock" data-s="18"></i> Lock </a>
+                                <a href="#"> <i class="livicon" data-name="lock" data-s="18"></i> Lock </a>
                             </div>
                             <div class="pull-right">
-                                <a href="login.html"> <i class="livicon" data-name="sign-out" data-s="18"></i> Logout </a>
+                                <a href="#"> <i class="livicon" data-name="sign-out" data-s="18"></i> Logout </a>
                             </div>
                         </li>
                     </ul>

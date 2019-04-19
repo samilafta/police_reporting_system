@@ -302,4 +302,15 @@ class CaseDetailsController extends Controller
 
     }
 
+    public function mycase()
+    {
+        $cases = CaseDetail::where('investigator_id', '=', Auth::user()->id)->get();
+        $users = User::all();
+
+
+        return view('cases.my_cases', compact('cases', 'users'));
+
+    }
+
+
 }
